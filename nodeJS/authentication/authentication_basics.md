@@ -178,6 +178,7 @@ This function is what will be called when we use the `passport.authenticate()` f
 ### Functions two and three: sessions and serialization
 
 <span id='cookie'>To make sure our user is logged in, and to allow them to _stay_ logged in as they move around our app, passport will use some data to create a cookie which is stored in the user's browser</span>. These next two functions define what bit of information passport is looking for when it creates and then decodes the cookie.  The reason they require us to define these functions is so that we can make sure that whatever bit of data it's looking for actually exists in our Database! For our purposes, the functions that are listed in the passport docs will work just fine.
+Add these functions after LocalStrategy and before passport.initialize().
 
 ~~~javascript
 passport.serializeUser((user, done) => {
